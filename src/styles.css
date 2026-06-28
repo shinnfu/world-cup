@@ -43,7 +43,6 @@ button {
   width: min(1340px, calc(100% - 36px));
   margin: 0 auto;
   padding: 20px 0 40px;
-  overflow-x: clip;
 }
 
 .app-header {
@@ -115,7 +114,7 @@ button {
 .hero-upcoming-flat,
 .login-panel,
 .ranking-panel {
-  padding: 16px 0;
+  padding: 16px 14px;
 }
 
 .hero-summary-flat {
@@ -220,6 +219,31 @@ button {
   border-bottom: 0;
 }
 
+.upcoming-item-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.upcoming-item-id {
+  color: #657180;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.upcoming-status-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 18px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  border: 1px solid rgba(24, 33, 43, 0.08);
+  white-space: nowrap;
+}
+
 .upcoming-item-main {
   display: flex;
   gap: 8px;
@@ -241,13 +265,14 @@ button {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 16px;
-  padding: 12px 0 14px;
+  padding: 14px;
   margin-bottom: 16px;
 }
 
 .summary-item {
   display: grid;
   gap: 5px;
+  min-width: 0;
 }
 
 .summary-item strong {
@@ -259,6 +284,7 @@ button {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: 24px;
+  min-width: 0;
 }
 
 .main-column,
@@ -266,6 +292,7 @@ button {
   display: grid;
   gap: 22px;
   align-content: start;
+  min-width: 0;
 }
 
 .sidebar-column {
@@ -367,12 +394,16 @@ button {
 }
 
 .bracket-scroll {
+  width: 100%;
+  max-width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
   margin-top: 14px;
   padding-bottom: 8px;
   scrollbar-width: thin;
   scrollbar-color: rgba(24, 33, 43, 0.24) transparent;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
 }
 
 .bracket-scale-shell {
@@ -386,7 +417,7 @@ button {
 
 .bracket-grid {
   display: grid;
-  grid-template-columns: repeat(6, 148px);
+  grid-template-columns: repeat(6, 156px);
   gap: 14px;
   width: max-content;
   min-width: max-content;
@@ -395,6 +426,8 @@ button {
 
 .stage-column {
   display: grid;
+  width: 156px;
+  min-width: 156px;
   gap: 10px;
   align-content: start;
 }
@@ -444,6 +477,7 @@ button {
   padding: 18px 0 10px;
   border-left: 0;
   border-right: 0;
+  overflow: hidden;
   text-align: left;
   color: inherit;
 }
@@ -460,6 +494,13 @@ button {
 .bracket-card-header {
   color: #657180;
   font-size: 0.82rem;
+}
+
+.bracket-card-header span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .match-status-tag {
@@ -502,9 +543,11 @@ button {
   justify-content: space-between;
   align-items: center;
   gap: 8px;
+  min-width: 0;
   min-height: 29px;
   padding: 6px 8px;
   border-radius: 10px;
+  overflow: hidden;
 }
 
 .team-slot-main {
@@ -522,11 +565,20 @@ button {
 
 .team-slot-count {
   font-size: 0.78rem;
+  flex-shrink: 0;
 }
 
 .team-slot-pending {
   color: #6a7584;
   background: rgba(24, 33, 43, 0.04);
+}
+
+.team-slot-pending span {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .flag-icon {
@@ -583,10 +635,10 @@ button {
 
 .ranking-button {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   padding: 12px 0;
   border: 0;
   background: transparent;
@@ -597,6 +649,13 @@ button {
 .ranking-rank {
   color: #8d6338;
   font-weight: 800;
+}
+
+.ranking-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .ranking-score {
@@ -835,8 +894,8 @@ button {
   .overview-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-areas:
-      "ranking finished"
-      "next next";
+      "ranking ranking"
+      "finished next";
     gap: 10px;
   }
 
@@ -859,12 +918,18 @@ button {
   .summary-strip {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
+    padding: 12px 14px;
   }
 
   .bracket-grid {
-    grid-template-columns: repeat(6, 122px);
-    gap: 10px;
+    grid-template-columns: repeat(6, 132px);
+    gap: 12px;
     padding-right: 0;
+  }
+
+  .stage-column {
+    width: 132px;
+    min-width: 132px;
   }
 
   .stage-header span {
@@ -901,6 +966,7 @@ button {
   }
 
   .bracket-card-header,
+  .upcoming-item-id,
   .team-slot-main span,
   .team-slot-count {
     font-size: 0.62rem;
@@ -910,6 +976,12 @@ button {
     top: 1px;
     padding: 1px 5px;
     font-size: 0.5rem;
+  }
+
+  .upcoming-status-tag {
+    min-height: 16px;
+    padding: 1px 6px;
+    font-size: 0.54rem;
   }
 
   .team-slot {
@@ -1013,16 +1085,13 @@ button {
   }
 
   .ranking-button {
+    gap: 10px;
     padding: 10px 0;
   }
 
-  .ranking-topline {
-    align-items: baseline;
-  }
-
-  .ranking-topline strong,
   .ranking-score,
-  .ranking-rank {
+  .ranking-rank,
+  .ranking-name {
     font-size: 0.78rem;
   }
 

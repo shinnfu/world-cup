@@ -215,10 +215,10 @@ function Dashboard({
               <RankingPanel matches={data.matches} rankings={rankings} votesByMatch={votesByMatch} />
             </div>
             <div className="overview-finished">
-              <HeroSummary data={data} onOpenMatch={onOpenMatch} variant="finished" />
+              <HeroSummary currentUser={currentUser} data={data} now={now} onOpenMatch={onOpenMatch} variant="finished" votesByMatch={votesByMatch} />
             </div>
             <div className="overview-next">
-              <HeroSummary data={data} onOpenMatch={onOpenMatch} variant="next" />
+              <HeroSummary currentUser={currentUser} data={data} now={now} onOpenMatch={onOpenMatch} variant="next" votesByMatch={votesByMatch} />
             </div>
           </section>
           <SummaryStrip matches={data.matches} statusCounts={statusCounts} />

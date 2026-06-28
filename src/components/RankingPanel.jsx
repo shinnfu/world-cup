@@ -24,10 +24,8 @@ function RankingPanel({ rankings, matches, votesByMatch }) {
               key={row.user.id}
             >
               <button className="ranking-button" type="button" onClick={() => setOpenUserId(open ? "" : row.user.id)}>
-                <div className="ranking-topline">
-                  <span className="ranking-rank">{row.rank}位</span>
-                  <strong>{row.user.displayName}</strong>
-                </div>
+                <span className="ranking-rank">{row.rank}位</span>
+                <strong className="ranking-name">{row.user.displayName}</strong>
                 <div className="ranking-score">{row.totalPoints.toFixed(1)} pt</div>
               </button>
 
