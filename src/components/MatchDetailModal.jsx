@@ -3,7 +3,7 @@ import {
   getBaseAssetUrl,
   getMatchStatus,
   getVotesForUsers,
-  getVoteTallies
+  getVoteShare
 } from "../lib/tournament";
 
 function MatchDetailModal({ match, users, votesByMatch, currentUser, now, onClose, onVote, voteBusyMatchId }) {
@@ -13,8 +13,9 @@ function MatchDetailModal({ match, users, votesByMatch, currentUser, now, onClos
 
   const status = getMatchStatus(match, now);
   const rows = getVotesForUsers(users, votesByMatch, match.id);
-  const tallies = getVoteTallies(match, votesByMatch);
+  const share = getVoteShare(match, votesByMatch);
   const voteDisabled = status.key !== "open" || !currentUser;
+  const currentUserVote = currentUser ? votesByMatch[match.id]?.[currentUser.id] || null : null;
 
   return (
     <div className="modal-backdrop" onClick={onClose} role="presentation">
@@ -30,12 +31,12 @@ function MatchDetailModal({ match, users, votesByMatch, currentUser, now, onClos
         </div>
 
         <div className="modal-match-overview">
-          <div className="modal-team-card">
+          <div className="modal-team-card modal-team-card-left">
             {match.team1 ? <img alt="" className="flag-icon large" src={getBaseAssetUrl(match.team1.flagAsset)} /> : null}
             <strong>{match.team1?.name ?? "未定"}</strong>
-            <span>{tallies[match.team1Code] || 0}票</span>
+            <span>{share.left}票</span>
             <button
-              className="button subtle-button"
+              className={`button modal-vote-button modal-vote-button-left ${currentUserVote?.predictedWinnerCode === match.team1Code ? "modal-vote-button-active" : ""}`}
               disabled={voteDisabled || !match.team1Code || voteBusyMatchId === match.id}
               type="button"
               onClick={() => onVote(match.id, match.team1Code)}
@@ -43,6 +44,7 @@ function MatchDetailModal({ match, users, votesByMatch, currentUser, now, onClos
               ここに投票
             </button>
           </div>
+
           <div className="modal-center">
             <span className={`${status.chipClassName} modal-status-chip`}>{status.label}</span>
             <strong className="modal-score">
@@ -50,14 +52,14 @@ function MatchDetailModal({ match, users, votesByMatch, currentUser, now, onClos
             </strong>
             <p className="modal-kickoff">{formatKickoff(match.kickoffAt)}</p>
             <p className="modal-points">{match.points} pt</p>
-            {match.result?.summary ? <p className="meta-text">{match.result.summary}</p> : null}
           </div>
-          <div className="modal-team-card">
+
+          <div className="modal-team-card modal-team-card-right">
             {match.team2 ? <img alt="" className="flag-icon large" src={getBaseAssetUrl(match.team2.flagAsset)} /> : null}
             <strong>{match.team2?.name ?? "未定"}</strong>
-            <span>{tallies[match.team2Code] || 0}票</span>
+            <span>{share.right}票</span>
             <button
-              className="button subtle-button"
+              className={`button modal-vote-button modal-vote-button-right ${currentUserVote?.predictedWinnerCode === match.team2Code ? "modal-vote-button-active" : ""}`}
               disabled={voteDisabled || !match.team2Code || voteBusyMatchId === match.id}
               type="button"
               onClick={() => onVote(match.id, match.team2Code)}
@@ -67,19 +69,27 @@ function MatchDetailModal({ match, users, votesByMatch, currentUser, now, onClos
           </div>
         </div>
 
+        <div className="modal-vote-meter" aria-hidden="true">
+          <div className="modal-vote-meter-left" style={{ width: `${share.leftRatio * 100}%` }} />
+          <div className="modal-vote-meter-right" style={{ width: `${share.rightRatio * 100}%` }} />
+        </div>
+
         <div className="modal-vote-table">
-          {rows.map(({ user, vote }) => (
-            <div className="vote-row" key={user.id}>
-              <div>
+          {rows.map(({ user, vote }) => {
+            const selectedLeft = vote?.predictedWinnerCode === match.team1Code;
+            const selectedRight = vote?.predictedWinnerCode === match.team2Code;
+
+            return (
+              <div className="vote-row" key={user.id}>
                 <strong>{user.displayName}</strong>
-                <span>@{user.id}</span>
+                <div className="vote-row-choice">
+                  {selectedLeft ? <span className="vote-choice-pill vote-choice-pill-left">{match.team1?.shortName}</span> : null}
+                  {selectedRight ? <span className="vote-choice-pill vote-choice-pill-right">{match.team2?.shortName}</span> : null}
+                  {!selectedLeft && !selectedRight ? <span className="vote-choice-empty" /> : null}
+                </div>
               </div>
-              <div className="vote-row-choice">
-                <span>{vote?.predictedWinnerCode ? match.team1Code === vote.predictedWinnerCode ? match.team1?.shortName : match.team2?.shortName : "未投票"}</span>
-                <small>{vote?.updatedAt ? "投票済み" : "未投票"}</small>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
     </div>

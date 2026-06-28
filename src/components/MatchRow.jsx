@@ -1,11 +1,14 @@
-import { getBaseAssetUrl, getMatchStatus, getSourceLabel } from "../lib/tournament";
+import { getBaseAssetUrl, getMatchStatus, getSourceLabel, getTeamVoteTone, getVoteShare } from "../lib/tournament";
 
-function TeamSlot({ team, source }) {
+function TeamSlot({ count, side, team, source, tone }) {
   if (team) {
     return (
-      <div className="team-slot">
-        <img alt="" className="flag-icon" src={getBaseAssetUrl(team.flagAsset)} />
-        <span>{team.shortName}</span>
+      <div className={`team-slot team-slot-${side}`} style={{ backgroundColor: tone }}>
+        <div className="team-slot-main">
+          <img alt="" className="flag-icon" src={getBaseAssetUrl(team.flagAsset)} />
+          <span>{team.shortName}</span>
+        </div>
+        <strong className="team-slot-count">{count}</strong>
       </div>
     );
   }
@@ -26,6 +29,7 @@ function MatchRow({ match, now, onOpen, currentUser, votesByMatch }) {
         ? "match-status-tag-voted"
         : "match-status-tag-unvoted"
       : "match-status-tag-neutral";
+  const share = getVoteShare(match, votesByMatch);
 
   return (
     <button className="bracket-match-row" type="button" onClick={() => onOpen(match.id)}>
@@ -35,8 +39,20 @@ function MatchRow({ match, now, onOpen, currentUser, votesByMatch }) {
       </div>
       <span className={`match-status-tag ${statusToneClass}`}>{status.label}</span>
       <div className="bracket-card-body">
-        <TeamSlot team={match.team1} source={match.team1Source} />
-        <TeamSlot team={match.team2} source={match.team2Source} />
+        <TeamSlot
+          count={share.left}
+          side="left"
+          team={match.team1}
+          source={match.team1Source}
+          tone={getTeamVoteTone("left", share.leftRatio)}
+        />
+        <TeamSlot
+          count={share.right}
+          side="right"
+          team={match.team2}
+          source={match.team2Source}
+          tone={getTeamVoteTone("right", share.rightRatio)}
+        />
       </div>
     </button>
   );

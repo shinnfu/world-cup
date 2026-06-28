@@ -138,6 +138,35 @@ export function getVoteTallies(match, votesByMatch) {
   return tallies;
 }
 
+export function getVoteShare(match, votesByMatch) {
+  const tallies = getVoteTallies(match, votesByMatch);
+  const left = match.team1Code ? tallies[match.team1Code] || 0 : 0;
+  const right = match.team2Code ? tallies[match.team2Code] || 0 : 0;
+  const total = left + right;
+
+  return {
+    left,
+    right,
+    total,
+    leftRatio: total > 0 ? left / total : 0,
+    rightRatio: total > 0 ? right / total : 0
+  };
+}
+
+export function getTeamVoteTone(side, ratio) {
+  if (!ratio) {
+    return "transparent";
+  }
+
+  const alpha = 0.12 + ratio * 0.34;
+
+  if (side === "left") {
+    return `rgba(224, 86, 71, ${alpha.toFixed(3)})`;
+  }
+
+  return `rgba(55, 108, 227, ${alpha.toFixed(3)})`;
+}
+
 export function getVotesForUsers(users, votesByMatch, matchId) {
   const voteMap = getVoteEntriesForMatch(votesByMatch, matchId);
 
@@ -214,6 +243,40 @@ export function getRankings(users, matches, votesByMatch) {
   return rows;
 }
 
+export function getUserPointHistory(userId, matches, votesByMatch) {
+  const rows = [];
+
+  for (const match of matches) {
+    if (!match.result?.winnerCode) {
+      continue;
+    }
+
+    const votes = getVoteEntriesForMatch(votesByMatch, match.id);
+    const userVote = votes[userId] || null;
+    const correctUserIds = Object.values(votes)
+      .filter((vote) => vote.predictedWinnerCode === match.result.winnerCode)
+      .map((vote) => vote.userId);
+
+    const earnedPoints =
+      userVote && userVote.predictedWinnerCode === match.result.winnerCode && correctUserIds.length > 0
+        ? match.points / correctUserIds.length
+        : 0;
+
+    rows.push({
+      matchId: match.id,
+      stageLabel: match.stageLabel,
+      kickoffAt: match.kickoffAt,
+      team1: match.team1,
+      team2: match.team2,
+      pickedCode: userVote?.predictedWinnerCode || null,
+      winnerCode: match.result.winnerCode,
+      earnedPoints
+    });
+  }
+
+  return rows.sort((left, right) => new Date(right.kickoffAt).getTime() - new Date(left.kickoffAt).getTime());
+}
+
 export function getStageColumns(stages, matchesById) {
   return stages.map((stage) => ({
     ...stage,
@@ -221,12 +284,19 @@ export function getStageColumns(stages, matchesById) {
   }));
 }
 
-export function getUpcomingMatches(matches, now = Date.now()) {
+export function getUpcomingMatches(matches, now = Date.now(), limit = 3) {
   return matches
     .filter((match) => !match.result?.winnerCode)
     .filter((match) => match.kickoffAt && new Date(match.kickoffAt).getTime() >= now)
     .sort((left, right) => new Date(left.kickoffAt).getTime() - new Date(right.kickoffAt).getTime())
-    .slice(0, 3);
+    .slice(0, limit);
+}
+
+export function getFinishedMatches(matches, limit = 5) {
+  return matches
+    .filter((match) => Boolean(match.result?.winnerCode))
+    .sort((left, right) => new Date(right.kickoffAt).getTime() - new Date(left.kickoffAt).getTime())
+    .slice(0, limit);
 }
 
 export function getOpenMatches(matches, now = Date.now()) {

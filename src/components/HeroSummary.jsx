@@ -1,26 +1,30 @@
-import { formatGeneratedAt, formatKickoff, getUpcomingMatches, getStagePointSummary } from "../lib/tournament";
+import { formatKickoff, getFinishedMatches, getUpcomingMatches } from "../lib/tournament";
 
 function HeroSummary({ data, onOpenMatch }) {
-  const upcomingMatches = getUpcomingMatches(data.matches);
-  const pointSummary = getStagePointSummary(data.tournament);
+  const upcomingMatches = getUpcomingMatches(data.matches, Date.now(), 5);
+  const finishedMatches = getFinishedMatches(data.matches, 5);
 
   return (
     <section className="hero-strip">
-      <section className="hero-summary-flat">
-        <div className="hero-meta-block">
-          <p className="eyebrow">Data</p>
-          <div className="hero-meta-row">
-            <span className="meta-label">データ更新</span>
-            <strong>{formatGeneratedAt(data.generatedAt)}</strong>
+      <section className="hero-upcoming-flat">
+        <div className="panel-header compact">
+          <div>
+            <p className="eyebrow">Finished</p>
+            <h2>結果確定</h2>
           </div>
         </div>
-
-        <div className="point-rules compact">
-          {pointSummary.map((item) => (
-            <article className="point-rule-inline" key={item.label}>
-              <span>{item.label}</span>
-              <strong>{item.value} pt</strong>
-            </article>
+        <div className="upcoming-list">
+          {finishedMatches.map((match) => (
+            <button className="upcoming-item flat-link" key={match.id} type="button" onClick={() => onOpenMatch(match.id)}>
+              <div className="upcoming-item-main">
+                <strong>{match.team1?.shortName ?? "未定"}</strong>
+                <span className="upcoming-item-score">
+                  {match.result?.team1Score ?? "-"} : {match.result?.team2Score ?? "-"}
+                </span>
+                <strong>{match.team2?.shortName ?? "未定"}</strong>
+              </div>
+              <p>{formatKickoff(match.kickoffAt)}</p>
+            </button>
           ))}
         </div>
       </section>

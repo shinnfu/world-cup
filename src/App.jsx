@@ -5,7 +5,6 @@ import LoginPanel from "./components/LoginPanel";
 import MatchDetailModal from "./components/MatchDetailModal";
 import RankingPanel from "./components/RankingPanel";
 import SummaryStrip from "./components/SummaryStrip";
-import VoteBoard from "./components/VoteBoard";
 import { createBackend } from "./lib/backends";
 import {
   getMatchStatus,
@@ -233,20 +232,10 @@ function Dashboard({
                 stages={stageColumns}
                 votesByMatch={votesByMatch}
               />
-              <VoteBoard
-                currentUser={currentUser}
-                matches={data.matches}
-                now={now}
-                onOpenMatch={onOpenMatch}
-                onVote={onVote}
-                users={data.users}
-                voteBusyMatchId={voteBusyMatchId}
-                votesByMatch={votesByMatch}
-              />
             </div>
 
             <aside className="sidebar-column">
-              <RankingPanel rankings={rankings} />
+              <RankingPanel matches={data.matches} rankings={rankings} votesByMatch={votesByMatch} />
             </aside>
           </div>
         </>
