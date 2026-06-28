@@ -152,6 +152,98 @@ function validateMatches(matches, tournament, teams) {
   }
 }
 
+function resolveSourceTeamCode(source, matchMap) {
+  if (!source) {
+    return null;
+  }
+
+  const sourceMatch = matchMap.get(source.matchId);
+  if (!sourceMatch || !sourceMatch.result?.winnerCode) {
+    return null;
+  }
+
+  const winnerCode = sourceMatch.result.winnerCode;
+  if (source.type === "winner") {
+    return winnerCode;
+  }
+
+  if (source.type === "loser") {
+    const { team1Code, team2Code } = sourceMatch;
+    if (!team1Code || !team2Code) {
+      return null;
+    }
+    if (winnerCode === team1Code) {
+      return team2Code;
+    }
+    if (winnerCode === team2Code) {
+      return team1Code;
+    }
+    return null;
+  }
+
+  return null;
+}
+
+function inferMatchTeamCodes(matches, tournament) {
+  const matchMap = new Map(matches.map((match) => [match.id, match]));
+  const stageMap = new Map(tournament.stages.map((stage) => [stage.id, stage]));
+  const sortedMatches = [...matches].sort((left, right) => {
+    const leftStage = stageMap.get(left.stage);
+    const rightStage = stageMap.get(right.stage);
+    return leftStage.order - rightStage.order || left.matchNumber - right.matchNumber;
+  });
+
+  let changed = false;
+
+  for (const match of sortedMatches) {
+    const resolvedTeam1Code = match.team1Code || resolveSourceTeamCode(match.team1Source, matchMap);
+    const resolvedTeam2Code = match.team2Code || resolveSourceTeamCode(match.team2Source, matchMap);
+
+    if (resolvedTeam1Code && match.team1Code && resolvedTeam1Code !== match.team1Code) {
+      fail(`Resolved team1Code for ${match.id} does not match explicit team1Code.`);
+    }
+
+    if (resolvedTeam2Code && match.team2Code && resolvedTeam2Code !== match.team2Code) {
+      fail(`Resolved team2Code for ${match.id} does not match explicit team2Code.`);
+    }
+
+    if (!match.team1Code && resolvedTeam1Code) {
+      match.team1Code = resolvedTeam1Code;
+      changed = true;
+    }
+
+    if (!match.team2Code && resolvedTeam2Code) {
+      match.team2Code = resolvedTeam2Code;
+      changed = true;
+    }
+
+    if (match.result?.winnerCode) {
+      const validCodes = [match.team1Code, match.team2Code].filter(Boolean);
+      if (validCodes.length < 2) {
+        fail(`Unable to resolve team codes for ${match.id} while result.winnerCode is set.`);
+      }
+      if (!validCodes.includes(match.result.winnerCode)) {
+        fail(`result.winnerCode on ${match.id} must match resolved team codes.`);
+      }
+    }
+  }
+
+  return changed;
+}
+
+async function writeMatchCodesIfNeeded(matches) {
+  const existingRaw = await readFile(SOURCE_FILES.matches, "utf8");
+  const existing = JSON.parse(existingRaw);
+
+  const wasDifferent = JSON.stringify(existing, null, 2) !== JSON.stringify(matches, null, 2);
+  if (!wasDifferent) {
+    return false;
+  }
+
+  await writeFile(SOURCE_FILES.matches, `${JSON.stringify(matches, null, 2)}\n`, "utf8");
+  return true;
+}
+
 function inferNextSlot(match, matchMap) {
   if (!match.nextMatchId) {
     return null;
@@ -260,6 +352,16 @@ async function main() {
     validateStages(tournament);
     validateTeams(teams);
     validateUsers(users);
+    validateMatches(matches, tournament, teams);
+
+    const teamCodesChanged = inferMatchTeamCodes(matches, tournament);
+    if (teamCodesChanged) {
+      const updated = await writeMatchCodesIfNeeded(matches);
+      if (updated) {
+        console.log("Updated data/source/world_cup_2026_matches.json with inferred team codes.");
+      }
+    }
+
     validateMatches(matches, tournament, teams);
 
     const compiled = buildCompiledData({ tournament, teams, users, matches });

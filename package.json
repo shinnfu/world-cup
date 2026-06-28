@@ -6,6 +6,11 @@
     "dev": "npm run build:data && vite",
     "build:data": "node scripts/build-data.mjs",
     "build:firebase-seed": "node scripts/build-firebase-seed.mjs",
+    "firebase:import": "node scripts/firebase-import.mjs",
+    "firebase:import:matchmeta": "node scripts/firebase-import.mjs /matchMeta firebase/firebase-match-meta.json",
+    "firebase:import:allowedusers": "node scripts/firebase-import.mjs /allowedUsers firebase/firebase-allowed-users.json",
+    "firebase:import:seed": "node scripts/firebase-import.mjs / firebase/firebase-database-seed.json",
+    "firebase:login": "npx --yes firebase-tools login",
     "download:flags": "node scripts/download-flags.mjs",
     "build:app": "vite build",
     "build": "npm run build:data && vite build",
@@ -18,6 +23,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^6.0.3",
+    "firebase-tools": "^15.22.3",
     "vite": "^8.1.0"
   }
 }
