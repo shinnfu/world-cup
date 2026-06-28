@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "id": "fukuda",
+      "email": "fukuda@worldcup2026.local",
+      "password": "example-password-1"
+    },
+    {
+      "id": "yasaku",
+      "email": "yasaku@worldcup2026.local",
+      "password": "example-password-2"
+    },
+    {
+      "id": "tennga",
+      "email": "tennga@worldcup2026.local",
+      "password": "example-password-3"
+    },
+    {
+      "id": "miya",
+      "email": "miya@worldcup2026.local",
+      "password": "example-password-4"
+    },
+    {
+      "id": "ritsuki",
+      "email": "ritsuki@worldcup2026.local",
+      "password": "example-password-5"
+    },
+    {
+      "id": "tomoya",
+      "email": "tomoya@worldcup2026.local",
+      "password": "example-password-6"
+    }
+  ]
+}

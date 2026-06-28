@@ -1,0 +1,146 @@
+[
+  {
+    "id": "R32-1",
+    "stage": "roundOf32",
+    "matchNumber": 1,
+    "kickoffAt": "",
+    "team1Code": "",
+    "team2Code": "",
+    "team1Source": null,
+    "team2Source": null,
+    "nextMatchId": "R16-1",
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "R16-1",
+    "stage": "roundOf16",
+    "matchNumber": 1,
+    "kickoffAt": "",
+    "team1Code": null,
+    "team2Code": null,
+    "team1Source": {
+      "type": "winner",
+      "matchId": "R32-1"
+    },
+    "team2Source": {
+      "type": "winner",
+      "matchId": "R32-2"
+    },
+    "nextMatchId": "QF-1",
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "QF-1",
+    "stage": "quarterfinal",
+    "matchNumber": 1,
+    "kickoffAt": "",
+    "team1Code": null,
+    "team2Code": null,
+    "team1Source": {
+      "type": "winner",
+      "matchId": "R16-1"
+    },
+    "team2Source": {
+      "type": "winner",
+      "matchId": "R16-2"
+    },
+    "nextMatchId": "SF-1",
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "SF-1",
+    "stage": "semifinal",
+    "matchNumber": 1,
+    "kickoffAt": "",
+    "team1Code": null,
+    "team2Code": null,
+    "team1Source": {
+      "type": "winner",
+      "matchId": "QF-1"
+    },
+    "team2Source": {
+      "type": "winner",
+      "matchId": "QF-2"
+    },
+    "nextMatchId": "F-1",
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "TP-1",
+    "stage": "thirdPlace",
+    "matchNumber": 1,
+    "kickoffAt": "",
+    "team1Code": null,
+    "team2Code": null,
+    "team1Source": {
+      "type": "loser",
+      "matchId": "SF-1"
+    },
+    "team2Source": {
+      "type": "loser",
+      "matchId": "SF-2"
+    },
+    "nextMatchId": null,
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "F-1",
+    "stage": "final",
+    "matchNumber": 1,
+    "kickoffAt": "",
+    "team1Code": null,
+    "team2Code": null,
+    "team1Source": {
+      "type": "winner",
+      "matchId": "SF-1"
+    },
+    "team2Source": {
+      "type": "winner",
+      "matchId": "SF-2"
+    },
+    "nextMatchId": null,
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  }
+]

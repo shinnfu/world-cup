@@ -1,0 +1,14 @@
+[
+  {
+    "code": "JPN",
+    "name": "日本",
+    "shortName": "日本",
+    "flagAsset": "/flags/jpn.svg"
+  },
+  {
+    "code": "BRA",
+    "name": "ブラジル",
+    "shortName": "ブラジル",
+    "flagAsset": "/flags/bra.svg"
+  }
+]

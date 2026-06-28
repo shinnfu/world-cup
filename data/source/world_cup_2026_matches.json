@@ -1,0 +1,706 @@
+[
+  {
+    "id": "R32-1",
+    "stage": "roundOf32",
+    "matchNumber": 1,
+    "kickoffAt": "2026-06-30T05:30:00+09:00",
+    "team1Code": "GER",
+    "team2Code": "PAR",
+    "team1Source": null,
+    "team2Source": null,
+    "nextMatchId": "R16-1",
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "R32-2",
+    "stage": "roundOf32",
+    "matchNumber": 2,
+    "kickoffAt": "2026-07-01T06:00:00+09:00",
+    "team1Code": "FRA",
+    "team2Code": "SWE",
+    "team1Source": null,
+    "team2Source": null,
+    "nextMatchId": "R16-1",
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "R32-3",
+    "stage": "roundOf32",
+    "matchNumber": 3,
+    "kickoffAt": "2026-06-29T04:00:00+09:00",
+    "team1Code": "RSA",
+    "team2Code": "CAN",
+    "team1Source": null,
+    "team2Source": null,
+    "nextMatchId": "R16-2",
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "R32-4",
+    "stage": "roundOf32",
+    "matchNumber": 4,
+    "kickoffAt": "2026-06-30T10:00:00+09:00",
+    "team1Code": "NED",
+    "team2Code": "MAR",
+    "team1Source": null,
+    "team2Source": null,
+    "nextMatchId": "R16-2",
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "R32-5",
+    "stage": "roundOf32",
+    "matchNumber": 5,
+    "kickoffAt": "2026-07-03T08:00:00+09:00",
+    "team1Code": "POR",
+    "team2Code": "CRO",
+    "team1Source": null,
+    "team2Source": null,
+    "nextMatchId": "R16-3",
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "R32-6",
+    "stage": "roundOf32",
+    "matchNumber": 6,
+    "kickoffAt": "2026-07-03T04:00:00+09:00",
+    "team1Code": "ESP",
+    "team2Code": "AUT",
+    "team1Source": null,
+    "team2Source": null,
+    "nextMatchId": "R16-3",
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "R32-7",
+    "stage": "roundOf32",
+    "matchNumber": 7,
+    "kickoffAt": "2026-07-02T09:00:00+09:00",
+    "team1Code": "USA",
+    "team2Code": "BIH",
+    "team1Source": null,
+    "team2Source": null,
+    "nextMatchId": "R16-4",
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "R32-8",
+    "stage": "roundOf32",
+    "matchNumber": 8,
+    "kickoffAt": "2026-07-02T05:00:00+09:00",
+    "team1Code": "BEL",
+    "team2Code": "SEN",
+    "team1Source": null,
+    "team2Source": null,
+    "nextMatchId": "R16-4",
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "R32-9",
+    "stage": "roundOf32",
+    "matchNumber": 9,
+    "kickoffAt": "2026-06-30T02:00:00+09:00",
+    "team1Code": "BRA",
+    "team2Code": "JPN",
+    "team1Source": null,
+    "team2Source": null,
+    "nextMatchId": "R16-5",
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "R32-10",
+    "stage": "roundOf32",
+    "matchNumber": 10,
+    "kickoffAt": "2026-07-01T02:00:00+09:00",
+    "team1Code": "CIV",
+    "team2Code": "NOR",
+    "team1Source": null,
+    "team2Source": null,
+    "nextMatchId": "R16-5",
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "R32-11",
+    "stage": "roundOf32",
+    "matchNumber": 11,
+    "kickoffAt": "2026-07-01T10:00:00+09:00",
+    "team1Code": "MEX",
+    "team2Code": "ECU",
+    "team1Source": null,
+    "team2Source": null,
+    "nextMatchId": "R16-6",
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "R32-12",
+    "stage": "roundOf32",
+    "matchNumber": 12,
+    "kickoffAt": "2026-07-02T01:00:00+09:00",
+    "team1Code": "ENG",
+    "team2Code": "COD",
+    "team1Source": null,
+    "team2Source": null,
+    "nextMatchId": "R16-6",
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "R32-13",
+    "stage": "roundOf32",
+    "matchNumber": 13,
+    "kickoffAt": "2026-07-04T07:00:00+09:00",
+    "team1Code": "ARG",
+    "team2Code": "CPV",
+    "team1Source": null,
+    "team2Source": null,
+    "nextMatchId": "R16-7",
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "R32-14",
+    "stage": "roundOf32",
+    "matchNumber": 14,
+    "kickoffAt": "2026-07-04T03:00:00+09:00",
+    "team1Code": "AUS",
+    "team2Code": "EGY",
+    "team1Source": null,
+    "team2Source": null,
+    "nextMatchId": "R16-7",
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "R32-15",
+    "stage": "roundOf32",
+    "matchNumber": 15,
+    "kickoffAt": "2026-07-03T12:00:00+09:00",
+    "team1Code": "SUI",
+    "team2Code": "ALG",
+    "team1Source": null,
+    "team2Source": null,
+    "nextMatchId": "R16-8",
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "R32-16",
+    "stage": "roundOf32",
+    "matchNumber": 16,
+    "kickoffAt": "2026-07-04T10:30:00+09:00",
+    "team1Code": "COL",
+    "team2Code": "GHA",
+    "team1Source": null,
+    "team2Source": null,
+    "nextMatchId": "R16-8",
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "R16-1",
+    "stage": "roundOf16",
+    "matchNumber": 1,
+    "kickoffAt": "2026-07-05T06:00:00+09:00",
+    "team1Code": null,
+    "team2Code": null,
+    "team1Source": {
+      "type": "winner",
+      "matchId": "R32-1"
+    },
+    "team2Source": {
+      "type": "winner",
+      "matchId": "R32-2"
+    },
+    "nextMatchId": "QF-1",
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "R16-2",
+    "stage": "roundOf16",
+    "matchNumber": 2,
+    "kickoffAt": "2026-07-05T02:00:00+09:00",
+    "team1Code": null,
+    "team2Code": null,
+    "team1Source": {
+      "type": "winner",
+      "matchId": "R32-3"
+    },
+    "team2Source": {
+      "type": "winner",
+      "matchId": "R32-4"
+    },
+    "nextMatchId": "QF-1",
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "R16-3",
+    "stage": "roundOf16",
+    "matchNumber": 3,
+    "kickoffAt": "2026-07-07T04:00:00+09:00",
+    "team1Code": null,
+    "team2Code": null,
+    "team1Source": {
+      "type": "winner",
+      "matchId": "R32-5"
+    },
+    "team2Source": {
+      "type": "winner",
+      "matchId": "R32-6"
+    },
+    "nextMatchId": "QF-2",
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "R16-4",
+    "stage": "roundOf16",
+    "matchNumber": 4,
+    "kickoffAt": "2026-07-07T09:00:00+09:00",
+    "team1Code": null,
+    "team2Code": null,
+    "team1Source": {
+      "type": "winner",
+      "matchId": "R32-7"
+    },
+    "team2Source": {
+      "type": "winner",
+      "matchId": "R32-8"
+    },
+    "nextMatchId": "QF-2",
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "R16-5",
+    "stage": "roundOf16",
+    "matchNumber": 5,
+    "kickoffAt": "2026-07-06T05:00:00+09:00",
+    "team1Code": null,
+    "team2Code": null,
+    "team1Source": {
+      "type": "winner",
+      "matchId": "R32-9"
+    },
+    "team2Source": {
+      "type": "winner",
+      "matchId": "R32-10"
+    },
+    "nextMatchId": "QF-3",
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "R16-6",
+    "stage": "roundOf16",
+    "matchNumber": 6,
+    "kickoffAt": "2026-07-06T09:00:00+09:00",
+    "team1Code": null,
+    "team2Code": null,
+    "team1Source": {
+      "type": "winner",
+      "matchId": "R32-11"
+    },
+    "team2Source": {
+      "type": "winner",
+      "matchId": "R32-12"
+    },
+    "nextMatchId": "QF-3",
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "R16-7",
+    "stage": "roundOf16",
+    "matchNumber": 7,
+    "kickoffAt": "2026-07-08T01:00:00+09:00",
+    "team1Code": null,
+    "team2Code": null,
+    "team1Source": {
+      "type": "winner",
+      "matchId": "R32-13"
+    },
+    "team2Source": {
+      "type": "winner",
+      "matchId": "R32-14"
+    },
+    "nextMatchId": "QF-4",
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "R16-8",
+    "stage": "roundOf16",
+    "matchNumber": 8,
+    "kickoffAt": "2026-07-08T05:00:00+09:00",
+    "team1Code": null,
+    "team2Code": null,
+    "team1Source": {
+      "type": "winner",
+      "matchId": "R32-15"
+    },
+    "team2Source": {
+      "type": "winner",
+      "matchId": "R32-16"
+    },
+    "nextMatchId": "QF-4",
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "QF-1",
+    "stage": "quarterfinal",
+    "matchNumber": 1,
+    "kickoffAt": "2026-07-10T05:00:00+09:00",
+    "team1Code": null,
+    "team2Code": null,
+    "team1Source": {
+      "type": "winner",
+      "matchId": "R16-1"
+    },
+    "team2Source": {
+      "type": "winner",
+      "matchId": "R16-2"
+    },
+    "nextMatchId": "SF-1",
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "QF-2",
+    "stage": "quarterfinal",
+    "matchNumber": 2,
+    "kickoffAt": "2026-07-11T04:00:00+09:00",
+    "team1Code": null,
+    "team2Code": null,
+    "team1Source": {
+      "type": "winner",
+      "matchId": "R16-3"
+    },
+    "team2Source": {
+      "type": "winner",
+      "matchId": "R16-4"
+    },
+    "nextMatchId": "SF-1",
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "QF-3",
+    "stage": "quarterfinal",
+    "matchNumber": 3,
+    "kickoffAt": "2026-07-12T06:00:00+09:00",
+    "team1Code": null,
+    "team2Code": null,
+    "team1Source": {
+      "type": "winner",
+      "matchId": "R16-5"
+    },
+    "team2Source": {
+      "type": "winner",
+      "matchId": "R16-6"
+    },
+    "nextMatchId": "SF-2",
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "QF-4",
+    "stage": "quarterfinal",
+    "matchNumber": 4,
+    "kickoffAt": "2026-07-12T10:00:00+09:00",
+    "team1Code": null,
+    "team2Code": null,
+    "team1Source": {
+      "type": "winner",
+      "matchId": "R16-7"
+    },
+    "team2Source": {
+      "type": "winner",
+      "matchId": "R16-8"
+    },
+    "nextMatchId": "SF-2",
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "SF-1",
+    "stage": "semifinal",
+    "matchNumber": 1,
+    "kickoffAt": "2026-07-15T04:00:00+09:00",
+    "team1Code": null,
+    "team2Code": null,
+    "team1Source": {
+      "type": "winner",
+      "matchId": "QF-1"
+    },
+    "team2Source": {
+      "type": "winner",
+      "matchId": "QF-2"
+    },
+    "nextMatchId": "F-1",
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "SF-2",
+    "stage": "semifinal",
+    "matchNumber": 2,
+    "kickoffAt": "2026-07-16T04:00:00+09:00",
+    "team1Code": null,
+    "team2Code": null,
+    "team1Source": {
+      "type": "winner",
+      "matchId": "QF-3"
+    },
+    "team2Source": {
+      "type": "winner",
+      "matchId": "QF-4"
+    },
+    "nextMatchId": "F-1",
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "TP-1",
+    "stage": "thirdPlace",
+    "matchNumber": 1,
+    "kickoffAt": "2026-07-19T06:00:00+09:00",
+    "team1Code": null,
+    "team2Code": null,
+    "team1Source": {
+      "type": "loser",
+      "matchId": "SF-1"
+    },
+    "team2Source": {
+      "type": "loser",
+      "matchId": "SF-2"
+    },
+    "nextMatchId": null,
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  },
+  {
+    "id": "F-1",
+    "stage": "final",
+    "matchNumber": 1,
+    "kickoffAt": "2026-07-20T04:00:00+09:00",
+    "team1Code": null,
+    "team2Code": null,
+    "team1Source": {
+      "type": "winner",
+      "matchId": "SF-1"
+    },
+    "team2Source": {
+      "type": "winner",
+      "matchId": "SF-2"
+    },
+    "nextMatchId": null,
+    "result": {
+      "winnerCode": null,
+      "team1Score": null,
+      "team2Score": null,
+      "team1PenaltyScore": null,
+      "team2PenaltyScore": null,
+      "summary": ""
+    }
+  }
+]

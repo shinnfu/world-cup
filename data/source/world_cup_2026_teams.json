@@ -1,0 +1,194 @@
+[
+  {
+    "code": "GER",
+    "name": "ドイツ",
+    "shortName": "ドイツ",
+    "flagAsset": "/flags/ger.svg"
+  },
+  {
+    "code": "PAR",
+    "name": "パラグアイ",
+    "shortName": "パラグアイ",
+    "flagAsset": "/flags/par.svg"
+  },
+  {
+    "code": "FRA",
+    "name": "フランス",
+    "shortName": "フランス",
+    "flagAsset": "/flags/fra.svg"
+  },
+  {
+    "code": "SWE",
+    "name": "スウェーデン",
+    "shortName": "スウェーデン",
+    "flagAsset": "/flags/swe.svg"
+  },
+  {
+    "code": "RSA",
+    "name": "南アフリカ",
+    "shortName": "南アフリカ",
+    "flagAsset": "/flags/rsa.svg"
+  },
+  {
+    "code": "CAN",
+    "name": "カナダ",
+    "shortName": "カナダ",
+    "flagAsset": "/flags/can.svg"
+  },
+  {
+    "code": "NED",
+    "name": "オランダ",
+    "shortName": "オランダ",
+    "flagAsset": "/flags/ned.svg"
+  },
+  {
+    "code": "MAR",
+    "name": "モロッコ",
+    "shortName": "モロッコ",
+    "flagAsset": "/flags/mar.svg"
+  },
+  {
+    "code": "POR",
+    "name": "ポルトガル",
+    "shortName": "ポルトガル",
+    "flagAsset": "/flags/por.svg"
+  },
+  {
+    "code": "CRO",
+    "name": "クロアチア",
+    "shortName": "クロアチア",
+    "flagAsset": "/flags/cro.svg"
+  },
+  {
+    "code": "ESP",
+    "name": "スペイン",
+    "shortName": "スペイン",
+    "flagAsset": "/flags/esp.svg"
+  },
+  {
+    "code": "AUT",
+    "name": "オーストリア",
+    "shortName": "オーストリア",
+    "flagAsset": "/flags/aut.svg"
+  },
+  {
+    "code": "USA",
+    "name": "アメリカ",
+    "shortName": "アメリカ",
+    "flagAsset": "/flags/usa.svg"
+  },
+  {
+    "code": "BIH",
+    "name": "ボスニア・ヘルツェゴビナ",
+    "shortName": "ボスニア・ヘルツェゴビナ",
+    "flagAsset": "/flags/bih.svg"
+  },
+  {
+    "code": "BEL",
+    "name": "ベルギー",
+    "shortName": "ベルギー",
+    "flagAsset": "/flags/bel.svg"
+  },
+  {
+    "code": "SEN",
+    "name": "セネガル",
+    "shortName": "セネガル",
+    "flagAsset": "/flags/sen.svg"
+  },
+  {
+    "code": "BRA",
+    "name": "ブラジル",
+    "shortName": "ブラジル",
+    "flagAsset": "/flags/bra.svg"
+  },
+  {
+    "code": "JPN",
+    "name": "日本",
+    "shortName": "日本",
+    "flagAsset": "/flags/jpn.svg"
+  },
+  {
+    "code": "CIV",
+    "name": "コートジボワール",
+    "shortName": "コートジボワール",
+    "flagAsset": "/flags/civ.svg"
+  },
+  {
+    "code": "NOR",
+    "name": "ノルウェー",
+    "shortName": "ノルウェー",
+    "flagAsset": "/flags/nor.svg"
+  },
+  {
+    "code": "MEX",
+    "name": "メキシコ",
+    "shortName": "メキシコ",
+    "flagAsset": "/flags/mex.svg"
+  },
+  {
+    "code": "ECU",
+    "name": "エクアドル",
+    "shortName": "エクアドル",
+    "flagAsset": "/flags/ecu.svg"
+  },
+  {
+    "code": "ENG",
+    "name": "イングランド",
+    "shortName": "イングランド",
+    "flagAsset": "/flags/eng.svg"
+  },
+  {
+    "code": "COD",
+    "name": "コンゴ民主共和国",
+    "shortName": "コンゴ民主共和国",
+    "flagAsset": "/flags/cod.svg"
+  },
+  {
+    "code": "ARG",
+    "name": "アルゼンチン",
+    "shortName": "アルゼンチン",
+    "flagAsset": "/flags/arg.svg"
+  },
+  {
+    "code": "CPV",
+    "name": "カーボベルデ",
+    "shortName": "カーボベルデ",
+    "flagAsset": "/flags/cpv.svg"
+  },
+  {
+    "code": "AUS",
+    "name": "オーストラリア",
+    "shortName": "オーストラリア",
+    "flagAsset": "/flags/aus.svg"
+  },
+  {
+    "code": "EGY",
+    "name": "エジプト",
+    "shortName": "エジプト",
+    "flagAsset": "/flags/egy.svg"
+  },
+  {
+    "code": "SUI",
+    "name": "スイス",
+    "shortName": "スイス",
+    "flagAsset": "/flags/sui.svg"
+  },
+  {
+    "code": "ALG",
+    "name": "アルジェリア",
+    "shortName": "アルジェリア",
+    "flagAsset": "/flags/alg.svg"
+  },
+  {
+    "code": "COL",
+    "name": "コロンビア",
+    "shortName": "コロンビア",
+    "flagAsset": "/flags/col.svg"
+  },
+  {
+    "code": "GHA",
+    "name": "ガーナ",
+    "shortName": "ガーナ",
+    "flagAsset": "/flags/gha.svg"
+  }
+]

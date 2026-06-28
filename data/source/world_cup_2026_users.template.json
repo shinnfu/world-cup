@@ -1,0 +1,26 @@
+[
+  {
+    "id": "user1",
+    "displayName": "User 1"
+  },
+  {
+    "id": "user2",
+    "displayName": "User 2"
+  },
+  {
+    "id": "user3",
+    "displayName": "User 3"
+  },
+  {
+    "id": "user4",
+    "displayName": "User 4"
+  },
+  {
+    "id": "user5",
+    "displayName": "User 5"
+  },
+  {
+    "id": "user6",
+    "displayName": "User 6"
+  }
+]

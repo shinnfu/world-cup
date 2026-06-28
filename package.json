@@ -1,0 +1,23 @@
+{
+  "name": "world-cup",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npm run build:data && vite",
+    "build:data": "node scripts/build-data.mjs",
+    "build:firebase-seed": "node scripts/build-firebase-seed.mjs",
+    "download:flags": "node scripts/download-flags.mjs",
+    "build:app": "vite build",
+    "build": "npm run build:data && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "firebase": "^12.15.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.3",
+    "vite": "^8.1.0"
+  }
+}

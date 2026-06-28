@@ -1,0 +1,128 @@
+{
+  "generatedAt": "2026-06-28T15:30:00.000+09:00",
+  "tournament": {
+    "id": "world-cup-2026",
+    "title": "FIFA World Cup 2026",
+    "timezone": "Asia/Tokyo",
+    "pointsByStage": {
+      "roundOf32": 120,
+      "roundOf16": 180,
+      "quarterfinal": 240,
+      "semifinal": 240,
+      "thirdPlace": 240,
+      "final": 240
+    }
+  },
+  "users": [
+    {
+      "id": "user1",
+      "displayName": "User 1"
+    }
+  ],
+  "teams": {
+    "GER": {
+      "code": "GER",
+      "name": "Germany",
+      "shortName": "Germany",
+      "flagAsset": "/flags/ger.svg"
+    },
+    "PAR": {
+      "code": "PAR",
+      "name": "Paraguay",
+      "shortName": "Paraguay",
+      "flagAsset": "/flags/par.svg"
+    }
+  },
+  "stages": [
+    {
+      "id": "roundOf32",
+      "label": "Round of 32",
+      "shortLabel": "R32",
+      "order": 1,
+      "matchIds": [
+        "R32-1"
+      ]
+    }
+  ],
+  "bracket": {
+    "roundOf32": [
+      "R32-1"
+    ],
+    "quarterfinal": [],
+    "semifinal": [],
+    "thirdPlace": [],
+    "final": []
+  },
+  "matches": [
+    {
+      "id": "R32-1",
+      "stage": "roundOf32",
+      "stageLabel": "Round of 32",
+      "stageOrder": 1,
+      "points": 120,
+      "matchNumber": 1,
+      "kickoffAt": "2026-06-30T05:30:00+09:00",
+      "team1Code": "GER",
+      "team2Code": "PAR",
+      "team1": {
+        "name": "Germany",
+        "code": "GER"
+      },
+      "team2": {
+        "name": "Paraguay",
+        "code": "PAR"
+      },
+      "team1Source": null,
+      "team2Source": null,
+      "previousMatchIds": [],
+      "nextMatch": {
+        "matchId": "R16-1",
+        "slot": "team1"
+      },
+      "result": {
+        "winnerCode": null,
+        "team1Score": null,
+        "team2Score": null,
+        "team1PenaltyScore": null,
+        "team2PenaltyScore": null,
+        "summary": ""
+      }
+    }
+  ],
+  "matchesById": {
+    "R32-1": {
+      "id": "R32-1",
+      "stage": "roundOf32",
+      "stageLabel": "Round of 32",
+      "stageOrder": 1,
+      "points": 120,
+      "matchNumber": 1,
+      "kickoffAt": "2026-06-30T05:30:00+09:00",
+      "team1Code": "GER",
+      "team2Code": "PAR",
+      "team1": {
+        "name": "Germany",
+        "code": "GER"
+      },
+      "team2": {
+        "name": "Paraguay",
+        "code": "PAR"
+      },
+      "team1Source": null,
+      "team2Source": null,
+      "previousMatchIds": [],
+      "nextMatch": {
+        "matchId": "R16-1",
+        "slot": "team1"
+      },
+      "result": {
+        "winnerCode": null,
+        "team1Score": null,
+        "team2Score": null,
+        "team1PenaltyScore": null,
+        "team2PenaltyScore": null,
+        "summary": ""
+      }
+    }
+  }
+}

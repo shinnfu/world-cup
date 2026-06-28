@@ -1,0 +1,23 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "allowedUsers": {
+      ".read": false,
+      ".write": false
+    },
+    "matchMeta": {
+      ".read": false,
+      ".write": false
+    },
+    "votes": {
+      ".read": true,
+      "$matchId": {
+        "$userId": {
+          ".write": "auth != null && auth.token.email != null && auth.token.email === root.child('allowedUsers/' + $userId + '/email').val() && root.child('matchMeta/' + $matchId + '/kickoffAtMs').isNumber() && now < root.child('matchMeta/' + $matchId + '/kickoffAtMs').val()",
+          ".validate": "newData.hasChildren(['userId', 'predictedWinnerCode', 'updatedAt']) && newData.child('userId').val() === $userId && newData.child('predictedWinnerCode').isString() && (newData.child('predictedWinnerCode').val() === root.child('matchMeta/' + $matchId + '/team1Code').val() || newData.child('predictedWinnerCode').val() === root.child('matchMeta/' + $matchId + '/team2Code').val()) && newData.child('updatedAt').exists()"
+        }
+      }
+    }
+  }
+}

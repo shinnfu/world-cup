@@ -1,0 +1,51 @@
+{
+  "id": "world-cup-2026",
+  "title": "FIFA World Cup 2026",
+  "timezone": "Asia/Tokyo",
+  "pointsByStage": {
+    "roundOf32": 120,
+    "roundOf16": 180,
+    "quarterfinal": 240,
+    "semifinal": 240,
+    "thirdPlace": 240,
+    "final": 240
+  },
+  "stages": [
+    {
+      "id": "roundOf32",
+      "label": "Round of 32",
+      "shortLabel": "R32",
+      "order": 1
+    },
+    {
+      "id": "roundOf16",
+      "label": "Round of 16",
+      "shortLabel": "R16",
+      "order": 2
+    },
+    {
+      "id": "quarterfinal",
+      "label": "Quarterfinal",
+      "shortLabel": "QF",
+      "order": 3
+    },
+    {
+      "id": "semifinal",
+      "label": "Semifinal",
+      "shortLabel": "SF",
+      "order": 4
+    },
+    {
+      "id": "thirdPlace",
+      "label": "Third Place Playoff",
+      "shortLabel": "3P",
+      "order": 5
+    },
+    {
+      "id": "final",
+      "label": "Final",
+      "shortLabel": "F",
+      "order": 6
+    }
+  ]
+}
