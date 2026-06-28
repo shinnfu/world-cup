@@ -6,12 +6,7 @@ import MatchDetailModal from "./components/MatchDetailModal";
 import RankingPanel from "./components/RankingPanel";
 import SummaryStrip from "./components/SummaryStrip";
 import { createBackend } from "./lib/backends";
-import {
-  getMatchStatus,
-  getRankings,
-  getStageColumns,
-  getStatusCounts
-} from "./lib/tournament";
+import { getRankings, getStageColumns, getStatusCounts } from "./lib/tournament";
 
 const backend = createBackend();
 const tournamentDataUrl = `${import.meta.env.BASE_URL}data/tournament.json`;
@@ -147,7 +142,6 @@ function App() {
         <Dashboard
           authBusy={authBusy}
           authError={authError}
-          backend={backend}
           currentUser={session?.user || null}
           data={state.data}
           now={now}
@@ -168,7 +162,6 @@ function App() {
 function Dashboard({
   authBusy,
   authError,
-  backend,
   currentUser,
   data,
   now,
@@ -202,9 +195,7 @@ function Dashboard({
               ログアウト
             </button>
           </div>
-        ) : (
-          <span className="mode-pill large">{backend.label}</span>
-        )}
+        ) : null}
       </header>
 
       {!isLoggedIn ? (
@@ -219,7 +210,17 @@ function Dashboard({
         </section>
       ) : (
         <>
-          <HeroSummary data={data} onOpenMatch={onOpenMatch} />
+          <section className="overview-grid">
+            <div className="overview-ranking">
+              <RankingPanel matches={data.matches} rankings={rankings} votesByMatch={votesByMatch} />
+            </div>
+            <div className="overview-finished">
+              <HeroSummary data={data} onOpenMatch={onOpenMatch} variant="finished" />
+            </div>
+            <div className="overview-next">
+              <HeroSummary data={data} onOpenMatch={onOpenMatch} variant="next" />
+            </div>
+          </section>
           <SummaryStrip matches={data.matches} statusCounts={statusCounts} />
 
           <div className="content-grid">
@@ -232,10 +233,6 @@ function Dashboard({
                 votesByMatch={votesByMatch}
               />
             </div>
-
-            <aside className="sidebar-column">
-              <RankingPanel matches={data.matches} rankings={rankings} votesByMatch={votesByMatch} />
-            </aside>
           </div>
         </>
       )}
