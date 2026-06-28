@@ -43,6 +43,8 @@ button {
   width: min(1340px, calc(100% - 36px));
   margin: 0 auto;
   padding: 20px 0 40px;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .app-header {
@@ -89,11 +91,17 @@ button {
   margin-bottom: 12px;
 }
 
+.overview-grid > * {
+  min-width: 0;
+}
+
 .panel {
   padding: 0;
   background: transparent;
   border: 0;
   box-shadow: none;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .hero-summary-flat,
@@ -101,13 +109,18 @@ button {
 .summary-strip,
 .login-panel,
 .ranking-panel,
-.stage-header,
-.bracket-match-row,
 .ranking-card {
   background: rgba(255, 255, 255, 0.62);
   border-top: 1px solid rgba(24, 33, 43, 0.08);
   border-bottom: 1px solid rgba(24, 33, 43, 0.08);
   backdrop-filter: blur(10px);
+}
+
+.stage-header,
+.bracket-match-row {
+  background: rgba(255, 255, 255, 0.9);
+  border-top: 1px solid rgba(24, 33, 43, 0.08);
+  border-bottom: 1px solid rgba(24, 33, 43, 0.08);
 }
 
 .hero-summary-flat,
@@ -287,12 +300,29 @@ button {
   min-width: 0;
 }
 
+.content-grid > * {
+  min-width: 0;
+}
+
 .main-column,
 .sidebar-column {
   display: grid;
   gap: 22px;
   align-content: start;
   min-width: 0;
+}
+
+.main-column > *,
+.sidebar-column > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.bracket-panel {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .sidebar-column {
@@ -404,6 +434,7 @@ button {
   scrollbar-color: rgba(24, 33, 43, 0.24) transparent;
   -webkit-overflow-scrolling: touch;
   touch-action: pan-x;
+  overscroll-behavior-x: contain;
 }
 
 .bracket-scale-shell {
@@ -418,7 +449,7 @@ button {
 .bracket-grid {
   display: grid;
   grid-template-columns: repeat(6, 156px);
-  gap: 14px;
+  gap: 16px;
   width: max-content;
   min-width: max-content;
   padding-right: 8px;
@@ -480,6 +511,8 @@ button {
   overflow: hidden;
   text-align: left;
   color: inherit;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .bracket-card-header,
@@ -922,14 +955,14 @@ button {
   }
 
   .bracket-grid {
-    grid-template-columns: repeat(6, 132px);
-    gap: 12px;
+    grid-template-columns: repeat(6, 124px);
+    gap: 14px;
     padding-right: 0;
   }
 
   .stage-column {
-    width: 132px;
-    min-width: 132px;
+    width: 124px;
+    min-width: 124px;
   }
 
   .stage-header span {
@@ -988,6 +1021,14 @@ button {
     min-height: 25px;
     padding: 5px 6px;
     border-radius: 8px;
+  }
+
+  .stage-header,
+  .bracket-match-row {
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
   }
 
   .flag-icon {

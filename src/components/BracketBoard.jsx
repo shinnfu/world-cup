@@ -2,7 +2,7 @@ import MatchRow from "./MatchRow";
 
 function BracketBoard({ stages, onOpenMatch, currentUser, now, votesByMatch }) {
   return (
-    <section className="panel">
+    <section className="panel bracket-panel">
       <div className="panel-header">
         <div>
           <p className="eyebrow">Bracket</p>
