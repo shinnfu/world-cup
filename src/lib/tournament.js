@@ -157,20 +157,6 @@ export function getVoteShare(match, votesByMatch) {
   };
 }
 
-export function getTeamVoteTone(side, ratio) {
-  if (!ratio) {
-    return "transparent";
-  }
-
-  const alpha = 0.12 + ratio * 0.34;
-
-  if (side === "left") {
-    return `rgba(224, 86, 71, ${alpha.toFixed(3)})`;
-  }
-
-  return `rgba(55, 108, 227, ${alpha.toFixed(3)})`;
-}
-
 export function getVotesForUsers(users, votesByMatch, matchId) {
   const voteMap = getVoteEntriesForMatch(votesByMatch, matchId);
 

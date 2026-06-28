@@ -507,6 +507,7 @@ button {
   padding: 18px 0 10px;
   border-left: 0;
   border-right: 0;
+  border-radius: 12px;
   overflow: hidden;
   text-align: left;
   color: inherit;
@@ -587,6 +588,8 @@ button {
   padding: 6px 8px;
   border-radius: 10px;
   overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.72);
+  background-repeat: no-repeat;
 }
 
 .team-slot-main {
@@ -594,6 +597,29 @@ button {
   align-items: center;
   gap: 8px;
   min-width: 0;
+}
+
+.team-slot-flag-wrap {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.team-slot-check {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: #38a169;
+  color: #ffffff;
+  font-size: 0.56rem;
+  font-weight: 900;
+  box-shadow: 0 0 0 1.5px rgba(255, 255, 255, 0.95);
 }
 
 .team-slot-main span {
@@ -1002,6 +1028,7 @@ button {
   .bracket-match-row {
     min-height: 72px;
     padding: 14px 0 7px;
+    border-radius: 10px;
   }
 
   .bracket-card-header,
@@ -1045,6 +1072,15 @@ button {
   .flag-icon {
     width: 16px;
     height: 16px;
+  }
+
+  .team-slot-check {
+    top: -3px;
+    right: -3px;
+    width: 10px;
+    height: 10px;
+    font-size: 0.46rem;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.95);
   }
 
   .content-grid {
