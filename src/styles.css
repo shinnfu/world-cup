@@ -399,6 +399,27 @@ button {
   will-change: transform;
 }
 
+/* Winner highlighting */
+.team-slot.winner {
+  border-left: 4px solid rgba(15, 184, 119, 0.9);
+  background: linear-gradient(90deg, rgba(15,184,119,0.06), transparent);
+}
+
+.team-slot-winner-badge {
+  margin-left: 8px;
+  font-size: 0.95rem;
+}
+
+.team-slot.winner .team-slot-main span {
+  font-weight: 800;
+  color: #0a5f3a;
+}
+
+.team-slot.winner .flag-icon {
+  box-shadow: 0 0 0 3px rgba(15,184,119,0.08);
+  border-radius: 3px;
+}
+
 .bracket-grid {
   display: grid;
   grid-template-columns: repeat(6, 156px);

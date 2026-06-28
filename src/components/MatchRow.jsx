@@ -1,13 +1,14 @@
 import { formatKickoff, getBaseAssetUrl, getMatchStatus, getSourceLabel, getVoteShare } from "../lib/tournament";
 
-function TeamSlot({ count, fillRatio, isPickedByCurrentUser, side, team, source }) {
+function TeamSlot({ count, fillRatio, isPickedByCurrentUser, side, team, source, isWinner }) {
   if (team) {
     return (
-      <div className={`team-slot team-slot-${side}`}>
+      <div className={`team-slot team-slot-${side} ${isWinner ? "winner" : ""}`}>
         <span className={`team-slot-fill team-slot-fill-${side}`} style={{ width: `${fillRatio * 100}%` }} />
         <div className="team-slot-main">
           <img alt="" className="flag-icon" src={getBaseAssetUrl(team.flagAsset)} />
           <span>{team.shortName}</span>
+          {isWinner ? <span className="team-slot-winner-badge">🏆</span> : null}
         </div>
         <div className="team-slot-vote-meta">
           {isPickedByCurrentUser ? <span className="team-slot-check">✓</span> : null}
@@ -59,6 +60,7 @@ function MatchRow({ match, now, onOpen, currentUser, votesByMatch }) {
           side="left"
           team={match.team1}
           source={match.team1Source}
+          isWinner={Boolean(match.result?.winnerCode && match.result.winnerCode === match.team1Code)}
         />
         <TeamSlot
           count={share.right}
@@ -67,6 +69,7 @@ function MatchRow({ match, now, onOpen, currentUser, votesByMatch }) {
           side="right"
           team={match.team2}
           source={match.team2Source}
+          isWinner={Boolean(match.result?.winnerCode && match.result.winnerCode === match.team2Code)}
         />
       </div>
     </button>
