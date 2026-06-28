@@ -282,9 +282,14 @@ export function getUpcomingMatches(matches, now = Date.now(), limit = 3) {
     .slice(0, limit);
 }
 
-export function getFinishedMatches(matches, limit = 5) {
+export function getFinishedMatches(matches, limit = 5, now = Date.now()) {
   return matches
-    .filter((match) => Boolean(match.result?.winnerCode))
+    .filter((match) => {
+      // 結果確定 または 受付終了（キックオフ時刻を過ぎた）
+      if (Boolean(match.result?.winnerCode)) return true;
+      const kickoffTime = new Date(match.kickoffAt).getTime();
+      return !Number.isNaN(kickoffTime) && now >= kickoffTime;
+    })
     .sort((left, right) => new Date(right.kickoffAt).getTime() - new Date(left.kickoffAt).getTime())
     .slice(0, limit);
 }

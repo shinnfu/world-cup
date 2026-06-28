@@ -34,7 +34,13 @@ function MatchRow({ match, now, onOpen, currentUser, votesByMatch }) {
         : "match-status-tag-unvoted"
       : "match-status-tag-neutral";
   const rowToneClass =
-    status.key === "open" ? (currentVote ? "match-card-voted" : "match-card-unvoted") : "";
+    status.key === "open"
+      ? currentVote
+        ? "match-card-voted"
+        : "match-card-unvoted"
+      : status.key === "closed"
+        ? "match-card-closed"
+        : "";
   const share = getVoteShare(match, votesByMatch);
 
   return (

@@ -218,6 +218,10 @@ button {
   background: rgba(235, 146, 146, 0.16);
 }
 
+.bracket-match-row.match-card-closed {
+  background: rgba(255, 201, 102, 0.16);
+}
+
 .hero-match-list {
   display: grid;
   gap: 8px;
@@ -428,26 +432,6 @@ button {
 .stage-stack {
   display: grid;
   gap: 10px;
-}
-
-.stage-roundOf16 .stage-stack {
-  margin-top: 32px;
-  gap: 34px;
-}
-
-.stage-quarterfinal .stage-stack {
-  margin-top: 74px;
-  gap: 42px;
-}
-
-.stage-semifinal .stage-stack {
-  margin-top: 114px;
-  gap: 104px;
-}
-
-.stage-thirdPlace .stage-stack,
-.stage-final .stage-stack {
-  margin-top: 166px;
 }
 
 .bracket-match-row {
@@ -734,15 +718,19 @@ button {
 
 .modal-backdrop {
   position: fixed;
+  z-index: 1000;
   inset: 0;
   display: grid;
   place-items: center;
   padding: 10px;
   background: rgba(18, 24, 31, 0.16);
   backdrop-filter: blur(10px);
+  isolation: isolate;
 }
 
 .modal-card {
+  position: relative;
+  z-index: 1001;
   width: min(960px, calc(100vw - 20px));
   max-height: calc(100dvh - 20px);
   overflow: hidden;
@@ -980,26 +968,6 @@ button {
 
   .stage-stack {
     gap: 8px;
-  }
-
-  .stage-roundOf16 .stage-stack {
-    margin-top: 22px;
-    gap: 22px;
-  }
-
-  .stage-quarterfinal .stage-stack {
-    margin-top: 44px;
-    gap: 28px;
-  }
-
-  .stage-semifinal .stage-stack {
-    margin-top: 68px;
-    gap: 70px;
-  }
-
-  .stage-thirdPlace .stage-stack,
-  .stage-final .stage-stack {
-    margin-top: 102px;
   }
 
   .bracket-match-row {

@@ -4,7 +4,7 @@ import { getUpcomingMatches, getFinishedMatches } from "../lib/tournament";
 const VARIANT_META = {
   finished: {
     eyebrow: "Finished",
-    title: "結果確定"
+    title: "終了"
   },
   next: {
     eyebrow: "Next",
