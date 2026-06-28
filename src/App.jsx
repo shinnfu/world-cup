@@ -212,7 +212,6 @@ function Dashboard({
           <LoginPanel
             authBusy={authBusy}
             authError={authError}
-            backend={backend}
             onLogin={onLogin}
             session={null}
             users={data.users}

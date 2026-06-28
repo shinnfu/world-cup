@@ -47,7 +47,6 @@ function BracketBoard({ stages, onOpenMatch, currentUser, now, votesByMatch }) {
           <p className="eyebrow">Bracket</p>
           <h2>トーナメント表</h2>
         </div>
-        <p className="meta-text">試合を選ぶと詳細と投票を開けます。</p>
       </div>
 
       <div className="bracket-scroll" ref={viewportRef}>

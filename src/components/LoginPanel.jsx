@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function LoginPanel({ backend, users, session, onLogin, authBusy, authError }) {
+function LoginPanel({ users, session, onLogin, authBusy, authError }) {
   const [userId, setUserId] = useState(users[0]?.id ?? "");
   const [password, setPassword] = useState("");
 
@@ -19,9 +19,8 @@ function LoginPanel({ backend, users, session, onLogin, authBusy, authError }) {
       <div className="panel-header compact">
         <div>
           <p className="eyebrow">Login</p>
-          <h2>投票するにはログイン</h2>
+          <h2>ログイン</h2>
         </div>
-        <span className="mode-pill">{backend.label}</span>
       </div>
 
       <form className="login-form" onSubmit={handleSubmit}>
@@ -30,7 +29,7 @@ function LoginPanel({ backend, users, session, onLogin, authBusy, authError }) {
           <select value={userId} onChange={(event) => setUserId(event.target.value)}>
             {users.map((user) => (
               <option key={user.id} value={user.id}>
-                {user.displayName} ({user.id})
+                {user.displayName}
               </option>
             ))}
           </select>
@@ -51,8 +50,6 @@ function LoginPanel({ backend, users, session, onLogin, authBusy, authError }) {
         </button>
       </form>
 
-      <p className="hint">{backend.passwordHint}</p>
-      <p className="meta-text">{backend.description}</p>
       {authError ? <p className="error-text">{authError}</p> : null}
     </section>
   );

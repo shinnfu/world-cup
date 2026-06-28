@@ -143,13 +143,17 @@ export function getVoteShare(match, votesByMatch) {
   const left = match.team1Code ? tallies[match.team1Code] || 0 : 0;
   const right = match.team2Code ? tallies[match.team2Code] || 0 : 0;
   const total = left + right;
+  const totalSlots = 6;
 
   return {
     left,
     right,
     total,
+    totalSlots,
     leftRatio: total > 0 ? left / total : 0,
-    rightRatio: total > 0 ? right / total : 0
+    rightRatio: total > 0 ? right / total : 0,
+    leftSlotRatio: Math.min(left / totalSlots, 1),
+    rightSlotRatio: Math.min(right / totalSlots, 1)
   };
 }
 

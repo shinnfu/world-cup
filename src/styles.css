@@ -432,7 +432,7 @@ button {
 .bracket-match-row {
   position: relative;
   width: 100%;
-  padding: 12px 0 10px;
+  padding: 18px 0 10px;
   border-left: 0;
   border-right: 0;
   text-align: left;
@@ -455,7 +455,7 @@ button {
 
 .match-status-tag {
   position: absolute;
-  top: -6px;
+  top: 2px;
   right: 0;
   display: inline-flex;
   align-items: center;
@@ -643,38 +643,60 @@ button {
 }
 
 .modal-match-overview {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 132px minmax(0, 1fr);
   gap: 10px;
   margin-top: 12px;
 }
 
-.modal-team-card,
-.modal-center {
+.modal-team-card {
+  position: relative;
+  z-index: 1;
   display: grid;
   justify-items: center;
   align-content: center;
   gap: 4px;
-  min-height: 126px;
-  padding: 10px 8px;
-  border-radius: 12px;
+  min-height: 132px;
+  padding: 12px 10px;
+  border: 0;
+  border-radius: 16px;
+  color: #ffffff;
+  text-align: center;
+  box-shadow: 0 14px 30px rgba(30, 38, 48, 0.12);
 }
 
 .modal-team-card-left {
-  background: rgba(224, 86, 71, 0.12);
+  background: linear-gradient(135deg, rgba(229, 88, 73, 0.94), rgba(196, 61, 55, 0.9));
+  transform: translateX(12px);
 }
 
 .modal-team-card-right {
-  background: rgba(55, 108, 227, 0.12);
+  background: linear-gradient(135deg, rgba(54, 112, 234, 0.94), rgba(31, 79, 191, 0.92));
+  transform: translateX(-12px);
 }
 
 .modal-center {
-  background: rgba(24, 33, 43, 0.05);
+  position: relative;
+  z-index: 2;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 3px;
+  min-height: 132px;
+  background: transparent;
 }
 
 .modal-status-chip {
   padding: 3px 7px;
   font-size: 0.64rem;
+}
+
+.modal-vs-mark {
+  color: rgba(24, 33, 43, 0.36);
+  font-size: 1.35rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
 }
 
 .modal-score {
@@ -689,22 +711,10 @@ button {
   font-size: 0.78rem;
 }
 
-.modal-vote-button {
-  width: 100%;
-  padding: 9px 10px;
-  color: #ffffff;
-}
-
-.modal-vote-button-left {
-  background: rgba(224, 86, 71, 0.82);
-}
-
-.modal-vote-button-right {
-  background: rgba(55, 108, 227, 0.84);
-}
-
-.modal-vote-button-active {
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.82);
+.modal-team-card-active {
+  box-shadow:
+    0 14px 30px rgba(30, 38, 48, 0.14),
+    inset 0 0 0 3px rgba(255, 255, 255, 0.9);
 }
 
 .modal-vote-meter {
@@ -786,7 +796,6 @@ button {
 }
 
 @media (max-width: 1120px) {
-  .hero-strip,
   .content-grid {
     grid-template-columns: 1fr;
   }
@@ -808,19 +817,18 @@ button {
   }
 
   .app-header,
-  .hero-strip,
   .header-session {
-    grid-template-columns: 1fr;
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .session-copy {
-    justify-items: start;
+  .hero-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
   }
 
-  .hero-strip {
-    gap: 10px;
+  .session-copy {
+    justify-items: start;
   }
 
   .summary-strip {
@@ -829,28 +837,53 @@ button {
   }
 
   .bracket-grid {
-    gap: 12px;
-    min-width: 980px;
+    grid-template-columns: repeat(6, minmax(128px, 1fr));
+    gap: 8px;
+    min-width: 788px;
   }
 
   .stage-header span {
-    font-size: 0.72rem;
+    font-size: 0.66rem;
+  }
+
+  .stage-stack {
+    gap: 8px;
+  }
+
+  .stage-roundOf16 .stage-stack {
+    margin-top: 22px;
+    gap: 22px;
+  }
+
+  .stage-quarterfinal .stage-stack {
+    margin-top: 44px;
+    gap: 28px;
+  }
+
+  .stage-semifinal .stage-stack {
+    margin-top: 68px;
+    gap: 70px;
+  }
+
+  .stage-thirdPlace .stage-stack,
+  .stage-final .stage-stack {
+    margin-top: 102px;
   }
 
   .bracket-match-row {
-    padding-bottom: 8px;
+    padding: 14px 0 7px;
   }
 
   .bracket-card-header,
   .team-slot-main span,
   .team-slot-count {
-    font-size: 0.72rem;
+    font-size: 0.62rem;
   }
 
   .match-status-tag {
-    top: -5px;
-    padding: 1px 6px;
-    font-size: 0.56rem;
+    top: 1px;
+    padding: 1px 5px;
+    font-size: 0.5rem;
   }
 
   .content-grid {
@@ -875,6 +908,14 @@ button {
     padding: 8px 6px;
   }
 
+  .modal-team-card-left {
+    transform: translateX(8px);
+  }
+
+  .modal-team-card-right {
+    transform: translateX(-8px);
+  }
+
   .flag-icon.large {
     width: 26px;
     height: 26px;
@@ -891,14 +932,13 @@ button {
     font-size: 0.68rem;
   }
 
-  .modal-vote-button {
-    padding: 7px 8px;
-    font-size: 0.72rem;
-  }
-
   .modal-status-chip {
     padding: 2px 6px;
     font-size: 0.56rem;
+  }
+
+  .modal-vs-mark {
+    font-size: 1rem;
   }
 
   .modal-score {
