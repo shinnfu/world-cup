@@ -211,11 +211,11 @@ button {
 }
 
 .match-card-voted {
-  background-color: rgba(115, 201, 155, 0.07);
+  background-color: rgba(115, 201, 155, 0.15);
 }
 
 .match-card-unvoted {
-  background-color: rgba(235, 146, 146, 0.07);
+  background-color: rgba(235, 146, 146, 0.15);
 }
 
 .hero-match-list {
