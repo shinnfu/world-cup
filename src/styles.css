@@ -579,6 +579,7 @@ button {
 }
 
 .team-slot {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -589,26 +590,43 @@ button {
   border-radius: 10px;
   overflow: hidden;
   background-color: rgba(255, 255, 255, 0.72);
-  background-repeat: no-repeat;
+}
+
+.team-slot-fill {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+}
+
+.team-slot-fill-left {
+  background: rgba(224, 86, 71, 0.30);
+}
+
+.team-slot-fill-right {
+  background: rgba(55, 108, 227, 0.30);
 }
 
 .team-slot-main {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   gap: 8px;
   min-width: 0;
 }
 
-.team-slot-flag-wrap {
+.team-slot-vote-meta {
   position: relative;
+  z-index: 1;
   display: inline-flex;
+  align-items: center;
+  gap: 4px;
   flex-shrink: 0;
 }
 
 .team-slot-check {
-  position: absolute;
-  top: -4px;
-  right: -4px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1075,8 +1093,6 @@ button {
   }
 
   .team-slot-check {
-    top: -3px;
-    right: -3px;
     width: 10px;
     height: 10px;
     font-size: 0.46rem;

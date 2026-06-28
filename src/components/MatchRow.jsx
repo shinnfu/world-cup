@@ -2,23 +2,17 @@ import { formatKickoff, getBaseAssetUrl, getMatchStatus, getSourceLabel, getVote
 
 function TeamSlot({ count, fillRatio, isPickedByCurrentUser, side, team, source }) {
   if (team) {
-    const fillColor = side === "left" ? "rgba(224, 86, 71, 0.30)" : "rgba(55, 108, 227, 0.30)";
-
     return (
-      <div
-        className={`team-slot team-slot-${side}`}
-        style={{
-          backgroundImage: `linear-gradient(to left, ${fillColor} 0%, ${fillColor} ${fillRatio * 100}%, rgba(255, 255, 255, 0) ${fillRatio * 100}%, rgba(255, 255, 255, 0) 100%)`
-        }}
-      >
+      <div className={`team-slot team-slot-${side}`}>
+        <span className={`team-slot-fill team-slot-fill-${side}`} style={{ width: `${fillRatio * 100}%` }} />
         <div className="team-slot-main">
-          <span className="team-slot-flag-wrap">
-            <img alt="" className="flag-icon" src={getBaseAssetUrl(team.flagAsset)} />
-            {isPickedByCurrentUser ? <span className="team-slot-check">✓</span> : null}
-          </span>
+          <img alt="" className="flag-icon" src={getBaseAssetUrl(team.flagAsset)} />
           <span>{team.shortName}</span>
         </div>
-        <strong className="team-slot-count">{count}</strong>
+        <div className="team-slot-vote-meta">
+          {isPickedByCurrentUser ? <span className="team-slot-check">✓</span> : null}
+          <strong className="team-slot-count">{count}</strong>
+        </div>
       </div>
     );
   }
