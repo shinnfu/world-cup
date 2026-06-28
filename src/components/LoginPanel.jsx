@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function LoginPanel({ backend, users, session, onLogin, onLogout, authBusy, authError }) {
+function LoginPanel({ backend, users, session, onLogin, authBusy, authError }) {
   const [userId, setUserId] = useState(users[0]?.id ?? "");
   const [password, setPassword] = useState("");
 
@@ -11,29 +11,11 @@ function LoginPanel({ backend, users, session, onLogin, onLogout, authBusy, auth
   }
 
   if (session?.user) {
-    return (
-      <section className="panel sidebar-panel">
-        <div className="panel-header compact">
-          <div>
-            <p className="eyebrow">Account</p>
-            <h2>ログイン中</h2>
-          </div>
-          <span className="mode-pill">{backend.label}</span>
-        </div>
-        <div className="account-card">
-          <strong>{session.user.displayName}</strong>
-          <span>@{session.user.id}</span>
-        </div>
-        <p className="meta-text">{backend.description}</p>
-        <button className="button ghost-button" type="button" onClick={onLogout}>
-          ログアウト
-        </button>
-      </section>
-    );
+    return null;
   }
 
   return (
-    <section className="panel sidebar-panel">
+    <section className="panel login-panel">
       <div className="panel-header compact">
         <div>
           <p className="eyebrow">Login</p>

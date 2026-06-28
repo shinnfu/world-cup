@@ -1,6 +1,6 @@
 function RankingPanel({ rankings }) {
   return (
-    <section className="panel sidebar-panel">
+    <section className="panel ranking-panel">
       <div className="panel-header compact">
         <div>
           <p className="eyebrow">Ranking</p>

@@ -12,6 +12,7 @@ firebase/firebase-database-seed.json
 .env.*
 !.env.example
 config/local/*.local.json
+config/local/*.local.md
 config/local/*.secret.json
 
 .firebase/

@@ -44,12 +44,12 @@ function MatchDetailModal({ match, users, votesByMatch, currentUser, now, onClos
             </button>
           </div>
           <div className="modal-center">
-            <span className={status.chipClassName}>{status.label}</span>
+            <span className={`${status.chipClassName} modal-status-chip`}>{status.label}</span>
             <strong className="modal-score">
               {match.result?.team1Score ?? "-"} : {match.result?.team2Score ?? "-"}
             </strong>
-            <p>{formatKickoff(match.kickoffAt)}</p>
-            <p>{match.points} pt</p>
+            <p className="modal-kickoff">{formatKickoff(match.kickoffAt)}</p>
+            <p className="modal-points">{match.points} pt</p>
             {match.result?.summary ? <p className="meta-text">{match.result.summary}</p> : null}
           </div>
           <div className="modal-team-card">

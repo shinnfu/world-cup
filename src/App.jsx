@@ -8,7 +8,6 @@ import SummaryStrip from "./components/SummaryStrip";
 import VoteBoard from "./components/VoteBoard";
 import { createBackend } from "./lib/backends";
 import {
-  formatGeneratedAt,
   getMatchStatus,
   getRankings,
   getStageColumns,
@@ -187,49 +186,71 @@ function Dashboard({
   const rankings = getRankings(data.users, data.matches, votesByMatch);
   const stageColumns = getStageColumns(data.stages, data.matchesById);
   const selectedMatch = selectedMatchId ? data.matchesById[selectedMatchId] : null;
+  const isLoggedIn = Boolean(currentUser);
 
   return (
     <>
       <header className="app-header">
-        <div>
-          <p className="eyebrow">Ready to build</p>
+        <div className="header-block">
           <h1 className="header-title">{data.tournament.title}</h1>
-          <p className="meta-text">生成データ更新: {formatGeneratedAt(data.generatedAt)}</p>
         </div>
-        <span className="mode-pill large">{backend.label}</span>
+        {isLoggedIn ? (
+          <div className="header-session">
+            <div className="session-copy">
+              <strong>Hello {currentUser.displayName}さん</strong>
+            </div>
+            <button className="button ghost-button" type="button" onClick={onLogout}>
+              ログアウト
+            </button>
+          </div>
+        ) : (
+          <span className="mode-pill large">{backend.label}</span>
+        )}
       </header>
 
-      <HeroSummary data={data} />
-      <SummaryStrip matches={data.matches} statusCounts={statusCounts} teams={data.teams} users={data.users} />
-
-      <div className="content-grid">
-        <div className="main-column">
-          <BracketBoard onOpenMatch={onOpenMatch} stages={stageColumns} />
-          <VoteBoard
-            currentUser={currentUser}
-            matches={data.matches}
-            now={now}
-            onOpenMatch={onOpenMatch}
-            onVote={onVote}
-            users={data.users}
-            voteBusyMatchId={voteBusyMatchId}
-            votesByMatch={votesByMatch}
-          />
-        </div>
-
-        <aside className="sidebar-column">
+      {!isLoggedIn ? (
+        <section className="login-only-shell">
           <LoginPanel
             authBusy={authBusy}
             authError={authError}
             backend={backend}
             onLogin={onLogin}
-            onLogout={onLogout}
-            session={currentUser ? { user: currentUser } : null}
+            session={null}
             users={data.users}
           />
-          <RankingPanel rankings={rankings} />
-        </aside>
-      </div>
+        </section>
+      ) : (
+        <>
+          <HeroSummary data={data} onOpenMatch={onOpenMatch} />
+          <SummaryStrip matches={data.matches} statusCounts={statusCounts} />
+
+          <div className="content-grid">
+            <div className="main-column">
+              <BracketBoard
+                currentUser={currentUser}
+                now={now}
+                onOpenMatch={onOpenMatch}
+                stages={stageColumns}
+                votesByMatch={votesByMatch}
+              />
+              <VoteBoard
+                currentUser={currentUser}
+                matches={data.matches}
+                now={now}
+                onOpenMatch={onOpenMatch}
+                onVote={onVote}
+                users={data.users}
+                voteBusyMatchId={voteBusyMatchId}
+                votesByMatch={votesByMatch}
+              />
+            </div>
+
+            <aside className="sidebar-column">
+              <RankingPanel rankings={rankings} />
+            </aside>
+          </div>
+        </>
+      )}
 
       <MatchDetailModal
         currentUser={currentUser}
