@@ -1,4 +1,4 @@
-import { getBaseAssetUrl, getMatchStatus, getSourceLabel, getTeamVoteTone, getVoteShare } from "../lib/tournament";
+import { formatKickoff, getBaseAssetUrl, getMatchStatus, getSourceLabel, getTeamVoteTone, getVoteShare } from "../lib/tournament";
 
 function TeamSlot({ count, side, team, source, tone }) {
   if (team) {
@@ -37,6 +37,7 @@ function MatchRow({ match, now, onOpen, currentUser, votesByMatch }) {
         <span>{match.id}</span>
         <span>{match.points} pt</span>
       </div>
+      <p className="bracket-card-kickoff">{formatKickoff(match.kickoffAt)}</p>
       <span className={`match-status-tag ${statusToneClass}`}>{status.label}</span>
       <div className="bracket-card-body">
         <TeamSlot

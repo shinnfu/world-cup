@@ -433,7 +433,6 @@ button {
   scrollbar-width: thin;
   scrollbar-color: rgba(24, 33, 43, 0.24) transparent;
   -webkit-overflow-scrolling: touch;
-  touch-action: pan-x;
   overscroll-behavior-x: contain;
 }
 
@@ -534,6 +533,13 @@ button {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.bracket-card-kickoff {
+  margin: 4px 0 0;
+  color: #7a8595;
+  font-size: 0.68rem;
+  line-height: 1.2;
 }
 
 .match-status-tag {
@@ -1003,6 +1009,11 @@ button {
   .team-slot-main span,
   .team-slot-count {
     font-size: 0.62rem;
+  }
+
+  .bracket-card-kickoff {
+    margin-top: 3px;
+    font-size: 0.54rem;
   }
 
   .match-status-tag {
