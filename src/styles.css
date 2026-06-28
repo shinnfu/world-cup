@@ -210,11 +210,11 @@ button {
   font-size: 0.96rem;
 }
 
-.match-card-voted {
+.bracket-match-row.match-card-voted {
   background: rgba(115, 201, 155, 0.16);
 }
 
-.match-card-unvoted {
+.bracket-match-row.match-card-unvoted {
   background: rgba(235, 146, 146, 0.16);
 }
 
