@@ -33,13 +33,15 @@ function MatchRow({ match, now, onOpen, currentUser, votesByMatch }) {
         ? "match-status-tag-voted"
         : "match-status-tag-unvoted"
       : "match-status-tag-neutral";
+  const rowToneClass =
+    status.key === "open" ? (currentVote ? "match-card-voted" : "match-card-unvoted") : "";
   const share = getVoteShare(match, votesByMatch);
 
   return (
-    <button className="bracket-match-row" type="button" onClick={() => onOpen(match.id)}>
+    <button className={`bracket-match-row ${rowToneClass}`.trim()} type="button" onClick={() => onOpen(match.id)}>
       <div className="bracket-card-header">
         <span>{match.id}</span>
-        <span>{match.points} pt</span>
+        <span className="bracket-card-points">{match.points} pt</span>
       </div>
       <p className="bracket-card-kickoff">{formatKickoff(match.kickoffAt)}</p>
       <span className={`match-status-tag ${statusToneClass}`}>{status.label}</span>

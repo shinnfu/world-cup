@@ -26,7 +26,7 @@ function RankingPanel({ rankings, matches, votesByMatch }) {
               <button className="ranking-button" type="button" onClick={() => setOpenUserId(open ? "" : row.user.id)}>
                 <span className="ranking-rank">{row.rank}位</span>
                 <strong className="ranking-name">{row.user.displayName}</strong>
-                <div className="ranking-score">{row.totalPoints.toFixed(1)} pt</div>
+                <div className="ranking-score">{row.totalPoints.toFixed(0)} pt</div>
               </button>
 
               {open ? (

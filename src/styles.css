@@ -210,68 +210,18 @@ button {
   font-size: 0.96rem;
 }
 
-.upcoming-list {
+.match-card-voted {
+  background-color: rgba(115, 201, 155, 0.07);
+}
+
+.match-card-unvoted {
+  background-color: rgba(235, 146, 146, 0.07);
+}
+
+.hero-match-list {
   display: grid;
-  gap: 0;
-  margin-top: 12px;
-}
-
-.upcoming-item {
-  display: grid;
-  gap: 4px;
-  width: 100%;
-  padding: 12px 0;
-  border: 0;
-  border-bottom: 1px solid rgba(24, 33, 43, 0.08);
-  background: transparent;
-  color: inherit;
-  text-align: left;
-}
-
-.upcoming-item:last-child {
-  border-bottom: 0;
-}
-
-.upcoming-item-topline {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-.upcoming-item-id {
-  color: #657180;
-  font-size: 0.72rem;
-  font-weight: 700;
-}
-
-.upcoming-status-tag {
-  display: inline-flex;
-  align-items: center;
-  min-height: 18px;
-  padding: 1px 8px;
-  border-radius: 999px;
-  font-size: 0.62rem;
-  font-weight: 700;
-  border: 1px solid rgba(24, 33, 43, 0.08);
-  white-space: nowrap;
-}
-
-.upcoming-item-main {
-  display: flex;
   gap: 8px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.upcoming-item-score {
-  color: #657180;
-  font-weight: 800;
-}
-
-.upcoming-item p {
-  margin: 0;
-  color: #657180;
+  margin-top: 12px;
 }
 
 .summary-strip {
@@ -525,6 +475,7 @@ button {
 }
 
 .bracket-card-header {
+  padding-right: 12px;
   color: #657180;
   font-size: 0.82rem;
 }
@@ -536,8 +487,16 @@ button {
   white-space: nowrap;
 }
 
+.bracket-card-points {
+  flex-shrink: 0;
+  padding-right: 8px;
+  color: #657180;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
 .bracket-card-kickoff {
-  margin: 4px 0 0;
+  margin: 0;
   color: #7a8595;
   font-size: 0.68rem;
   line-height: 1.2;
@@ -601,11 +560,11 @@ button {
 }
 
 .team-slot-fill-left {
-  background: rgba(224, 86, 71, 0.30);
+  background: rgba(224, 86, 71, 0.16);
 }
 
 .team-slot-fill-right {
-  background: rgba(55, 108, 227, 0.30);
+  background: rgba(55, 108, 227, 0.16);
 }
 
 .team-slot-main {
@@ -722,7 +681,7 @@ button {
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   gap: 12px;
-  padding: 12px 0;
+  padding: 12px 8px 12px 0;
   border: 0;
   background: transparent;
   color: inherit;
@@ -1050,14 +1009,13 @@ button {
   }
 
   .bracket-card-header,
-  .upcoming-item-id,
+  .bracket-card-points,
   .team-slot-main span,
   .team-slot-count {
     font-size: 0.62rem;
   }
 
   .bracket-card-kickoff {
-    margin-top: 3px;
     font-size: 0.54rem;
   }
 
@@ -1190,7 +1148,7 @@ button {
 
   .ranking-button {
     gap: 10px;
-    padding: 10px 0;
+    padding: 10px 6px 10px 0;
   }
 
   .ranking-score,
