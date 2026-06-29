@@ -162,9 +162,9 @@
     "team2Source": null,
     "nextMatchId": "R16-5",
     "result": {
-      "winnerCode": null,
-      "team1Score": null,
-      "team2Score": null,
+      "winnerCode": "BRA",
+      "team1Score": 2,
+      "team2Score": 1,
       "team1PenaltyScore": null,
       "team2PenaltyScore": null,
       "summary": ""
@@ -408,7 +408,7 @@
     "stage": "roundOf16",
     "matchNumber": 5,
     "kickoffAt": "2026-07-06T05:00:00+09:00",
-    "team1Code": null,
+    "team1Code": "BRA",
     "team2Code": null,
     "team1Source": {
       "type": "winner",
