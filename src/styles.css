@@ -400,7 +400,8 @@ button {
 }
 
 /* Winner highlighting */
-.team-slot.winner {
+.team-slot.winner,
+.team-slot.winner-large {
   border-left: 4px solid rgba(15, 184, 119, 0.9);
   background: linear-gradient(90deg, rgba(15,184,119,0.06), transparent);
 }
@@ -410,12 +411,14 @@ button {
   font-size: 0.95rem;
 }
 
-.team-slot.winner .team-slot-main span {
-  font-weight: 800;
-  color: #0a5f3a;
+.team-slot.winner .team-slot-main span,
+.team-slot.winner-large .team-slot-main span {
+  font-weight: 400;
+  color: inherit;
 }
 
-.team-slot.winner .flag-icon {
+.team-slot.winner .flag-icon,
+.team-slot.winner-large .flag-icon {
   box-shadow: 0 0 0 3px rgba(15,184,119,0.08);
   border-radius: 3px;
 }

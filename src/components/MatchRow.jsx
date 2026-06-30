@@ -1,9 +1,11 @@
 import { formatKickoff, getBaseAssetUrl, getMatchStatus, getSourceLabel, getVoteShare } from "../lib/tournament";
 
-function TeamSlot({ count, fillRatio, isPickedByCurrentUser, side, team, source, isWinner }) {
+function TeamSlot({ count, fillRatio, isPickedByCurrentUser, side, team, source, isWinner, isWinnerEmphasisActive }) {
   if (team) {
+    const winnerClassName = isWinner && isWinnerEmphasisActive ? "winner-large" : "";
+
     return (
-      <div className={`team-slot team-slot-${side} ${isWinner ? "winner" : ""}`}>
+      <div className={`team-slot team-slot-${side} ${winnerClassName}`.trim()}>
         <span className={`team-slot-fill team-slot-fill-${side}`} style={{ width: `${fillRatio * 100}%` }} />
         <div className="team-slot-main">
           <img alt="" className="flag-icon" src={getBaseAssetUrl(team.flagAsset)} />
@@ -43,6 +45,7 @@ function MatchRow({ match, now, onOpen, currentUser, votesByMatch }) {
         ? "match-card-closed"
         : "";
   const share = getVoteShare(match, votesByMatch);
+  const isWinnerEmphasisActive = status.key === "final";
 
   return (
     <button className={`bracket-match-row ${rowToneClass}`.trim()} type="button" onClick={() => onOpen(match.id)}>
@@ -61,6 +64,7 @@ function MatchRow({ match, now, onOpen, currentUser, votesByMatch }) {
           team={match.team1}
           source={match.team1Source}
           isWinner={Boolean(match.result?.winnerCode && match.result.winnerCode === match.team1Code)}
+          isWinnerEmphasisActive={isWinnerEmphasisActive}
         />
         <TeamSlot
           count={share.right}
@@ -70,6 +74,7 @@ function MatchRow({ match, now, onOpen, currentUser, votesByMatch }) {
           team={match.team2}
           source={match.team2Source}
           isWinner={Boolean(match.result?.winnerCode && match.result.winnerCode === match.team2Code)}
+          isWinnerEmphasisActive={isWinnerEmphasisActive}
         />
       </div>
     </button>
