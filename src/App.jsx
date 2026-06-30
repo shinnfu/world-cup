@@ -9,7 +9,7 @@ import { createBackend } from "./lib/backends";
 import { getRankings, getStageColumns, getStatusCounts } from "./lib/tournament";
 
 const backend = createBackend();
-const tournamentDataUrl = `${import.meta.env.BASE_URL}data/tournament.json`;
+const tournamentDataUrl = `${import.meta.env.BASE_URL}data/tournament.json?v=${__APP_VERSION__}`;
 
 function App() {
   const [state, setState] = useState({ status: "loading", data: null, error: null });
