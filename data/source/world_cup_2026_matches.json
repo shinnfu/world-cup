@@ -49,8 +49,8 @@
     "nextMatchId": "R16-2",
     "result": {
       "winnerCode": "CAN",
-      "team1Score": 1,
-      "team2Score": 0,
+      "team1Score": 0,
+      "team2Score": 1,
       "team1PenaltyScore": null,
       "team2PenaltyScore": null,
       "summary": ""
