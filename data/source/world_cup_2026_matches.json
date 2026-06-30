@@ -11,8 +11,8 @@
     "nextMatchId": "R16-1",
     "result": {
       "winnerCode": "PAR",
-      "team1Score": 0,
-      "team2Score": 0,
+      "team1Score": 1,
+      "team2Score": 1,
       "team1PenaltyScore": null,
       "team2PenaltyScore": null,
       "summary": ""
@@ -67,9 +67,9 @@
     "team2Source": null,
     "nextMatchId": "R16-2",
     "result": {
-      "winnerCode": null,
-      "team1Score": null,
-      "team2Score": null,
+      "winnerCode": "MAR",
+      "team1Score": 1,
+      "team2Score": 1,
       "team1PenaltyScore": null,
       "team2PenaltyScore": null,
       "summary": ""
@@ -334,7 +334,7 @@
     "matchNumber": 2,
     "kickoffAt": "2026-07-05T02:00:00+09:00",
     "team1Code": "CAN",
-    "team2Code": null,
+    "team2Code": "MAR",
     "team1Source": {
       "type": "winner",
       "matchId": "R32-3"
