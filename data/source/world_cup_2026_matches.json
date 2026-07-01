@@ -200,9 +200,9 @@
     "team2Source": null,
     "nextMatchId": "R16-6",
     "result": {
-      "winnerCode": null,
-      "team1Score": null,
-      "team2Score": null,
+      "winnerCode": "MEX",
+      "team1Score": 2,
+      "team2Score": 0,
       "team1PenaltyScore": null,
       "team2PenaltyScore": null,
       "summary": ""
@@ -433,7 +433,7 @@
     "stage": "roundOf16",
     "matchNumber": 6,
     "kickoffAt": "2026-07-06T09:00:00+09:00",
-    "team1Code": null,
+    "team1Code": "MEX",
     "team2Code": null,
     "team1Source": {
       "type": "winner",
