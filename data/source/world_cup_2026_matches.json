@@ -29,9 +29,9 @@
     "team2Source": null,
     "nextMatchId": "R16-1",
     "result": {
-      "winnerCode": null,
-      "team1Score": null,
-      "team2Score": null,
+      "winnerCode": "FRA",
+      "team1Score": 3,
+      "team2Score": 0,
       "team1PenaltyScore": null,
       "team2PenaltyScore": null,
       "summary": ""
@@ -181,9 +181,9 @@
     "team2Source": null,
     "nextMatchId": "R16-5",
     "result": {
-      "winnerCode": null,
-      "team1Score": null,
-      "team2Score": null,
+      "winnerCode": "NOR",
+      "team1Score": 1,
+      "team2Score": 2,
       "team1PenaltyScore": null,
       "team2PenaltyScore": null,
       "summary": ""
@@ -309,7 +309,7 @@
     "matchNumber": 1,
     "kickoffAt": "2026-07-05T06:00:00+09:00",
     "team1Code": "PAR",
-    "team2Code": null,
+    "team2Code": "FRA",
     "team1Source": {
       "type": "winner",
       "matchId": "R32-1"
@@ -409,7 +409,7 @@
     "matchNumber": 5,
     "kickoffAt": "2026-07-06T05:00:00+09:00",
     "team1Code": "BRA",
-    "team2Code": null,
+    "team2Code": "NOR",
     "team1Source": {
       "type": "winner",
       "matchId": "R32-9"
