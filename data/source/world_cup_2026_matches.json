@@ -124,9 +124,9 @@
     "team2Source": null,
     "nextMatchId": "R16-4",
     "result": {
-      "winnerCode": null,
-      "team1Score": null,
-      "team2Score": null,
+      "winnerCode": "USA",
+      "team1Score": 2,
+      "team2Score": 0,
       "team1PenaltyScore": null,
       "team2PenaltyScore": null,
       "summary": ""
@@ -143,9 +143,9 @@
     "team2Source": null,
     "nextMatchId": "R16-4",
     "result": {
-      "winnerCode": null,
-      "team1Score": null,
-      "team2Score": null,
+      "winnerCode": "BEL",
+      "team1Score": 3,
+      "team2Score": 2,
       "team1PenaltyScore": null,
       "team2PenaltyScore": null,
       "summary": ""
@@ -383,8 +383,8 @@
     "stage": "roundOf16",
     "matchNumber": 4,
     "kickoffAt": "2026-07-07T09:00:00+09:00",
-    "team1Code": null,
-    "team2Code": null,
+    "team1Code": "USA",
+    "team2Code": "BEL",
     "team1Source": {
       "type": "winner",
       "matchId": "R32-7"
